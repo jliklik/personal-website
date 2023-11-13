@@ -6,25 +6,27 @@
       @mouseleave="toggleOffDetailedSystems"
     >
       <container class="flex flex-grow flex-column items-center backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50">
-        <div class="flex items-center text-center h-full ml-10">
-          Systems.
+        <div class="flex flex-grow items-center justify-center h-full border-2">
+          Systems
         </div>
-        <div class="flex h-screen" v-if="systems_mouseover==true">
-          Hello world!
-        </div>
+        <!-- <transition name="slide" mode="out-in">
+          <div v-if="systems_mouseover==true" class="flex h-screen" >
+            Hello world!
+          </div>
+        </transition> -->
       </container>
     </span>
     <span class="flex flex-1 flex-row h-full text-white font-bold text-5xl font-sans glow-text-shadow bg-center bg-cover bg-[url('./assets/sib.jpg')]">
       <container class="flex flex-grow flex-row items-center backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50">
-        <div class="flex items-center text-center h-full ml-10">
-          Software.
+        <div class="flex flex-grow items-center justify-center h-full">
+          Software
         </div>
       </container>
     </span>
     <span class="flex flex-1 flex-row h-full text-white font-bold text-5xl font-sans glow-text-shadow bg-center bg-cover bg-[url('./assets/cad.jpg')]">
       <container class="flex flex-grow flex-row items-center backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50">
-        <div class="flex items-center text-center h-full ml-10">
-          Engineering.
+        <div class="flex flex-grow items-center justify-center h-full">
+          Engineering
         </div>
       </container>
     </span>
