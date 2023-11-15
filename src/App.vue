@@ -1,7 +1,6 @@
 <script setup>
-import SearchBar from './components/SearchBar.vue'
-import NavigationBar from './components/NavigationBar.vue'
-import Home from './components/Home.vue'
+  import NavigationBar from './components/NavigationBar.vue'
+  import Home from './components/Home.vue'
 </script>
 
 <template>
