@@ -4,21 +4,9 @@
 
 <template>
   <container class="flex flex-row flex-grow">
-    <infographic :label="'Systems'" :text1="'Integration'" :text2="'Design'" :text3="'Analysis'"></infographic>
-    <span class="flex flex-1 flex-row h-full text-white font-bold text-5xl font-sans glow-text-shadow bg-center bg-cover bg-[url('./assets/sib.jpg')]">
-      <container class="flex flex-grow flex-col backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50">
-        <div class="flex w-full h-full flex-grow items-center justify-center">
-          Software
-        </div>
-      </container>
-    </span>
-    <span class="flex flex-1 flex-row h-full text-white font-bold text-5xl font-sans glow-text-shadow bg-center bg-cover bg-[url('./assets/cad.jpg')]">
-      <container class="flex flex-grow flex-col backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50">
-        <div class="flex w-full h-full flex-grow items-center justify-center">
-          Engineering
-        </div>
-      </container>
-    </span>
+    <infographic :label="'Systems'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
+    <infographic :label="'Software'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
+    <infographic :label="'Engineering'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>
   </container>
 
 </template>
