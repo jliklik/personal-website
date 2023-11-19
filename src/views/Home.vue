@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div class="flex flex-row flex-grow h-screen">
+  <div class="grid grid-cols-3 divide-x-0 h-screen">
     <infographic :label="'Systems'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
     <infographic :label="'Software'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
     <infographic :label="'Engineering'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>

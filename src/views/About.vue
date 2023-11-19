@@ -1,70 +1,37 @@
 <script setup>
-  console.log('About')
   import Journey from '../components/Journey.vue'
 </script>
 
 <template>
-  <Transition
-    appear
-    @before-enter="beforeEnter"
-    @enter="enter"
-    @after-enter="afterEnter"
-    @onMounted="onMounted"
-  >
-    <h1>About</h1>
-  </Transition>
+  <div class="bg-black">
+    <Journey :picture="'dtb.jpg'">
+      <div class="text-white font-bold text-3xl leading-10 ml-5 mr-5 mt-5 mb-5">
+      Hello! My name is Jian Lik. I am a <span style="color: plum">automation</span> and <span style="color: plum">software</span>
+      engineer with <span style="color: plum">5+</span> years of experience. I have a strong background in control systems, 
+      distributed processing and embedded software. 
+      I specialize in software which runs on <span style="color: plum">edge</span> computing devices, 
+      primarily in manufacturing and transportation industries. 
+      <br>
+      <br>
+      I have a unique perspective programming for both R&D and production environments.
+      I am not afraid of <span style="color: plum">innovation</span>, but also understand the need for 
+      <span style="color: plum">maintainable</span>, easy-to-troubleshoot code. 
+      <br>
+      <br>
+      My broad experience allows me to help set a vision
+      and propose solutions that create the most value for your company.
+      </div>
+    </Journey>
+    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+</div>
 </template>
 
 <script>
-  import gsap from 'gsap';
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
-
-  // https://www.youtube.com/watch?v=X7IBa7vZjmo
-  export default {
-    setup() {
-      const beforeEnter = (el) => {
-        console.log('before enter - set initial state')
-        el.style.transform = "translateY(-60px)"
-        el.style.opacity = 0
-      }
-      const onMounted = (el) => {
-        console.log('mounted - make transition')
-        gsap.to(el, {
-          // scrollTrigger: {
-          //   trigger: el,
-          //   toggleActions: "restart pause reverse none"
-          // },
-          duration: 1,
-          y: 0,
-          opacity: 1,
-          ease: 'bounce.out'
-        })
-      }
-      const enter = (el) => {
-        console.log('starting to enter - make transition')
-        gsap.to(el, {
-          // scrollTrigger: {
-          //   trigger: el,
-          //   toggleActions: "restart pause reverse none"
-          // },
-          duration: 1,
-          y: 0,
-          opacity: 1,
-          ease: 'bounce.out'
-        })
-      }
-      const afterEnter = () => {
-        console.log('after enter')
-      }
-      return {beforeEnter, enter, afterEnter, onMounted}
-    },
-    components: {
-    },
-    methods: {
-      
-    }
-  }
+ 
 </script>
 
 <style scoped>
