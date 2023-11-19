@@ -4,23 +4,23 @@
     @mouseover="toggleOnDetailed"
     @mouseleave="toggleOffDetailed"
   >
-    <container class="flex flex-grow flex-col items-center tint-background">
-      <div class="flex h-1/2 w-full items-center justify-center tint-background text-highlight-lg">
+    <div class="flex flex-grow flex-col items-center tint-background">
+      <div class="flex h-1/2 w-full items-center justify-center text-highlight-lg">
         {{ label }}
       </div>
       <Transition mode="out-in">
-        <container v-if="mouseover==true" class="flex h-1/2 flex-grow flex-col w-full">
-          <div class="flex flex-grow flex-col tint-background text-highlight-lg" >
+        <div v-if="mouseover==true" class="flex h-1/2 flex-grow flex-col w-full">
+          <div class="flex flex-grow flex-col text-highlight-lg" >
             <li class="flex flex-grow no-bullets ml-10" v-for="item in text_list">
               {{ item }}
             </li>
           </div>
-        </container>
-        <div v-else class="flex h-1/2 w-full items-center justify-center tint-background">
+        </div>
+        <div v-else class="flex h-1/2 w-full justify-center">
           <br><br><br><br>
         </div>
       </Transition>
-    </container>
+    </div>
   </span>
 </template>
 
@@ -58,10 +58,6 @@
 </script>
 
 <style scoped>
-
-  .glow-text-shadow {
-    text-shadow: #A54CFF 2px 5px;
-  }
   .v-enter-from{
     opacity: 0;
     transform: translateX(-10%);
@@ -74,6 +70,9 @@
   }
   .v-leave-to {
     opacity: 0;
+  }
+  .glow-text-shadow {
+    text-shadow: #A54CFF 2px 5px;
   }
   .tint-background {
     @apply backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50

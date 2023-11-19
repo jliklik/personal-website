@@ -5,7 +5,7 @@
 
 <template>
   <div class="flex flex-col h-screen">
-    <div class="flex-none bg-teal-500 "><NavigationBar/></div>
+    <div class="flex-none"><NavigationBar/></div>
     <Home/>
   </div>
 </template>

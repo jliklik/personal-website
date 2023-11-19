@@ -52,13 +52,4 @@
   .v-leave-to {
     opacity: 0;
   }
-  .text-highlight {
-    @apply text-white font-bold font-sans glow-text-shadow
-  }
-  .text-highlight-lg {
-    @apply text-highlight text-5xl
-  }
-  .text-highlight-md {
-    @apply text-highlight text-4xl 
-  }
 </style>
