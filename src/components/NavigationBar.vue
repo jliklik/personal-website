@@ -2,13 +2,13 @@
   <div class="flex">
     <ul class="flex flex-grow bg-gradient-to-r from-violet-800 to-indigo-300">
       <li class="flex li-link">
-        <router-link href="#" class="a-link flex flex-grow items-center justify-center">Home</router-link>
+        <router-link to="/" class="a-link flex flex-grow items-center justify-center">Home</router-link>
       </li>
       <li class="flex li-link">
-        <router-link href="#" class="a-link flex flex-grow items-center justify-center">About</router-link>
+        <router-link to="/about" class="a-link flex flex-grow items-center justify-center">About</router-link>
       </li>
       <li class="flex li-link">
-        <router-link href="#" class="a-link flex flex-grow items-center justify-center">Projects</router-link>
+        <router-link to="/projects" class="a-link flex flex-grow items-center justify-center">Projects</router-link>
       </li>
       <li class="flex li-link">
         <a href="#" class="a-link flex flex-grow items-center justify-center">GitHub</a>

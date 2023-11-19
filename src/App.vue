@@ -1,13 +1,12 @@
 <script setup>
   import NavigationBar from './components/NavigationBar.vue'
-  import Home from './components/Home.vue'
 </script>
 
 <template>
-  <div class="flex flex-col h-screen">
+  <div class="flex flex-col">
     <div class="flex-none"><NavigationBar/></div>
-    <Home/>
   </div>
+  <router-view/>
 </template>
 
 <style scoped>

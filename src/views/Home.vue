@@ -1,22 +1,20 @@
 <script setup>
-  import Infographic from './Infographic.vue'
+  console.log('Home')
+  import Infographic from '../components/Infographic.vue'
 </script>
 
 <template>
-  <container class="flex flex-row flex-grow">
+  <div class="flex flex-row flex-grow h-screen">
     <infographic :label="'Systems'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
     <infographic :label="'Software'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
     <infographic :label="'Engineering'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>
-  </container>
+  </div>
 
 </template>
 
 <script>
   // TODO: convert each flex container into a component and can pass in text and picture
   export default {
-    components: {
-      Infographic
-    },
     data() { // data is used to maintain state
       return {
         Systems: "Systems",
