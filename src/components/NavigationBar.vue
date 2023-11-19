@@ -17,9 +17,9 @@
     <div class="w-250px bg-gradient-to-r from-slate-800 to-slate-900">
       <ul class="grid grid-cols-[75px_230px] font-bold text-white ml-3">
         <img src="../../src/assets/jl_logo.png" width="50" height="50" class="item1 col-span-1">
-        <div class="grid grid-rows-2 mr-3">
+        <div class="grid grid-rows-2 mr-3 mb-2">
           <strong>Jian Lik Ng</strong>
-          <span>Software Systems Engineer</span>
+          <span>Systems Software Engineer</span>
         </div>
       </ul>
     </div>
