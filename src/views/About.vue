@@ -38,8 +38,6 @@
           I graduated with co-op experience in research and manufacturing. 
           I also have hands-on marine engineering experience
           building robotic sailboats with the UBC SailBot team.
-          <br>
-          <br>
           I don't just <span style="color: plum">talk code</span>, but I can <span style="color: plum">talk shop</span> as well. 
         </p>
       </div>
@@ -51,10 +49,10 @@
           <br>
           <br>
           Automation programming requires a system-wide mindset, a commitment to safety and the ability to think in real-time. 
-          It may not be obvious, but sometimes object orientation and state machines introduce greater risk to a system.
+          Sometimes principles used in traditional software engineering introduce greater risk to a system.
           <br>
           <br>
-          The PLC industry is slow to adopt new technologies and there is a high cost for many mediocre solutions. 
+          However, the PLC industry is often painstakingly slow to adopt new technologies and there is a high cost for many mediocre solutions. 
           As a PLC programmer and a software engineer, I can pick the right tool that maximizes 
           <span style="color: plum">functionality and reliability</span>. 
         </p>
@@ -77,8 +75,7 @@
           I can also help you create custom <span style="color: plum">pipelines</span> and <span style="color: plum">containerize</span> your environments.
           <br>
           <br>
-          Not sure how to tackle a task? <br>
-          I'm always down to do some research and learn about new technologies!
+          Not sure how to tackle a task? I'm always down to do some research and learn about new technologies!
         </p>
       </div>
     </Journey>
@@ -91,6 +88,6 @@
 
 <style scoped>
   .journey-text{
-    @apply flex items-center text-white font-bold text-3xl leading-10 ml-5 mr-5 mt-5 mb-5
+    @apply flex items-center text-white font-poppins font-normal text-3xl leading-10 ml-5 mr-5 mt-5 mb-5
   }
 </style>

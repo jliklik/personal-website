@@ -10,7 +10,7 @@
       </div>
       <Transition mode="out-in">
         <div v-if="mouseover==true" class="flex h-1/2 flex-grow flex-col w-full">
-          <div class="flex flex-grow flex-col text-highlight-lg mb-20">
+          <div class="flex flex-grow flex-col text-highlight-md mb-20">
             <li class="flex flex-grow no-bullets ml-10" v-for="item in text_list">
               {{ item }}
             </li>
@@ -76,13 +76,13 @@
     @apply backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50
   }
   .text-highlight {
-    @apply text-white font-bold font-sans glow-text-shadow
+    @apply text-white font-inter
   }
   .text-highlight-lg {
-    @apply text-highlight text-5xl
+    @apply text-highlight text-5xl font-black
   }
   .text-highlight-md {
-    @apply text-highlight text-4xl 
+    @apply text-highlight text-4xl font-bold
   }
   .no-bullets {
     list-style-type: none;

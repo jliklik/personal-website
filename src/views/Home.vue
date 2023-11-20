@@ -4,24 +4,22 @@
 </script>
 
 <template>
-  <div class="grid grid-cols-3 divide-x-0 h-screen">
-    <infographic :label="'Systems'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
-    <infographic :label="'Software'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
-    <infographic :label="'Engineering'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>
+  <div class="bg-black">
+    <Transition
+      appear
+      @before-enter="beforeEnter"
+      @enter="enter">
+      <div class="grid grid-cols-3 divide-x-0 h-screen">
+        <infographic :label="'SYSTEMS'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
+        <infographic :label="'SOFTWARE'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
+        <infographic :label="'ENGINEERING'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>
+      </div>
+    </Transition>
   </div>
-
 </template>
 
 <script>
-  // TODO: convert each flex container into a component and can pass in text and picture
   export default {
-    data() { // data is used to maintain state
-      return {
-        Systems: "Systems",
-        Integration: "Integration",
-        engineering_mouseover: false,
-      }
-    },
     methods: {
       toggleOnDetailedSystems() {
         console.log('Systems moused over');
@@ -31,6 +29,27 @@
         console.log('Systems moused leave');
         this.systems_mouseover = false;
       }
+    },
+    setup() {
+      const beforeEnter = (el) => {
+        console.log('before enter - set initial state')
+        el.style.opacity = 0
+      }
+      const enter = (el) => {
+        console.log('starting to enter - make transition')
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            toggleActions: "restart none restart none"
+          },
+          duration: 2,
+          opacity: 1,
+        })
+      }
+      const afterEnter = () => {
+        console.log('after enter')
+      }
+      return {beforeEnter, enter, afterEnter}
     }
   }
 </script>

@@ -14,10 +14,10 @@
         <a href="#" class="a-link flex flex-grow items-center justify-center">GitHub</a>
       </li>
     </ul>
-    <div class="w-250px bg-gradient-to-r from-slate-800 to-slate-900">
-      <ul class="grid grid-cols-[75px_230px] font-bold text-white ml-3 mt-2">
+    <div class="w-400px bg-gradient-to-r from-slate-800 to-slate-900">
+      <ul class="grid grid-cols-[75px_300px] font-bold text-white ml-3 mt-2">
         <img src="../../src/assets/jl_logo.png" width="50" height="50" class="item1 col-span-1">
-        <div class="grid grid-rows-2 mr-3 mb-2">
+        <div class="grid grid-rows-2 mr-3 mb-2 font-poppins">
           <strong>Jian Lik Ng</strong>
           <span>Systems Software Engineer</span>
         </div>
@@ -37,13 +37,13 @@
     @apply w-28;
   }
   .a-link{
-    @apply font-bold text-white text-xl leading-10 hover:bg-violet-600 rounded-lg;
+    @apply font-bold font-poppins text-white text-xl leading-10 hover:bg-violet-600 rounded-lg;
   }
   .glow-text-shadow {
     text-shadow: #A54CFF 2px 5px;
   }
   .text-highlight {
-    @apply text-white font-bold font-sans glow-text-shadow
+    @apply text-white font-bold font-poppins glow-text-shadow
   }
   .text-highlight-lg {
     @apply text-highlight text-5xl
