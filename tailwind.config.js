@@ -11,11 +11,9 @@ export default {
       }
     },
     fontFamily: {
-      sans: [
-        '"Helvetica Neue"',
-        '"Segoe UI"'
-      ]
-    },
+      'poppins': ['Poppins'],
+      'inter': ['Inter']
+    }
   },
   plugins: [],
 }

@@ -1,16 +1,16 @@
 <template>
   <span
-    class="flex flex-1 flex-row h-full bg-center bg-cover bg-scale" :style="bgStyle"
+    class="flex h-full bg-center bg-cover bg-scale" :style="bgStyle"
     @mouseover="toggleOnDetailed"
     @mouseleave="toggleOffDetailed"
   >
-    <div class="flex flex-grow flex-col items-center tint-background">
-      <div class="flex h-1/2 w-full items-center justify-center text-highlight-lg">
+    <div class="flex-col w-screen tint-background">
+      <div class="flex h-1/2 items-center justify-center text-highlight-lg">
         {{ label }}
       </div>
       <Transition mode="out-in">
         <div v-if="mouseover==true" class="flex h-1/2 flex-grow flex-col w-full">
-          <div class="flex flex-grow flex-col text-highlight-lg" >
+          <div class="flex flex-grow flex-col text-highlight-md mb-20">
             <li class="flex flex-grow no-bullets ml-10" v-for="item in text_list">
               {{ item }}
             </li>
@@ -25,9 +25,7 @@
 </template>
 
 <script>
-  // TODO: convert each flex container into a component and can pass in text and picture
   export default {
-
     props: {
       label: {required: true, type: String}, // can bind to labels
       text_list: {required: true, type: Array},
@@ -71,20 +69,17 @@
   .v-leave-to {
     opacity: 0;
   }
-  .glow-text-shadow {
-    text-shadow: #A54CFF 2px 5px;
-  }
   .tint-background {
     @apply backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50
   }
   .text-highlight {
-    @apply text-white font-bold font-sans glow-text-shadow
+    @apply text-white font-inter
   }
   .text-highlight-lg {
-    @apply text-highlight text-5xl
+    @apply text-highlight text-5xl font-black
   }
   .text-highlight-md {
-    @apply text-highlight text-4xl 
+    @apply text-highlight text-4xl font-bold
   }
   .no-bullets {
     list-style-type: none;
