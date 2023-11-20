@@ -69,9 +69,6 @@
   .v-leave-to {
     opacity: 0;
   }
-  .glow-text-shadow {
-    text-shadow: #A54CFF 2px 5px;
-  }
   .tint-background {
     @apply backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50
   }

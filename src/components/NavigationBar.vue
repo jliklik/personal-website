@@ -2,16 +2,16 @@
   <div class="flex">
     <ul class="flex flex-grow bg-gradient-to-r from-violet-800 to-indigo-300">
       <li class="flex li-link">
-        <router-link to="/" class="a-link flex flex-grow items-center justify-center">Home</router-link>
+        <router-link to="/" class="router-link flex flex-grow items-center justify-center">Home</router-link>
       </li>
       <li class="flex li-link">
-        <router-link to="/about" class="a-link flex flex-grow items-center justify-center">About</router-link>
+        <router-link to="/about" class="router-link flex flex-grow items-center justify-center">About</router-link>
       </li>
       <li class="flex li-link">
-        <router-link to="/projects" class="a-link flex flex-grow items-center justify-center">Projects</router-link>
+        <router-link to="/projects" class="router-link flex flex-grow items-center justify-center">Projects</router-link>
       </li>
       <li class="flex li-link">
-        <a href="#" class="a-link flex flex-grow items-center justify-center">GitHub</a>
+        <a href="#" class="router-link flex flex-grow items-center justify-center">GitHub</a>
       </li>
     </ul>
     <div class="w-400px bg-gradient-to-r from-slate-800 to-slate-900">
@@ -36,19 +36,7 @@
   .li-link{
     @apply w-28;
   }
-  .a-link{
+  .router-link{
     @apply font-bold font-poppins text-white text-xl leading-10 hover:bg-violet-600 rounded-lg;
-  }
-  .glow-text-shadow {
-    text-shadow: #A54CFF 2px 5px;
-  }
-  .text-highlight {
-    @apply text-white font-bold font-poppins glow-text-shadow
-  }
-  .text-highlight-lg {
-    @apply text-highlight text-5xl
-  }
-  .text-highlight-md {
-    @apply text-highlight text-4xl 
   }
 </style>

@@ -55,15 +55,9 @@
 </script>
 
 <style scoped>
-  .glow-text-shadow {
-    text-shadow: #A54CFF 2px 5px;
-  }
   .v-enter-active,
   .v-leave-active {
     transition: opacity 0.5s ease;
-  }
-  .tint-background {
-    @apply backdrop-filter backdrop-brightness-25 hover:backdrop-brightness-50
   }
   .v-enter-from,
   .v-leave-to {
