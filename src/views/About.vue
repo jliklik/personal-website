@@ -44,10 +44,44 @@
         </p>
       </div>
     </Journey>
-    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
-    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
-    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
-    <Journey :blurb="`Hello World`" :picture="'dtb.jpg'"/>
+    <Journey :picture="'fp.jpg'">
+      <div class="journey-text">
+        <p class="">
+          Knowing how to program <span style="color: plum">automated systems</span> is a skillset not many developers have. 
+          <br>
+          <br>
+          Automation programming requires a system-wide mindset, a commitment to safety and the ability to think in real-time. 
+          It may not be obvious, but sometimes object orientation and state machines introduce greater risk to a system.
+          <br>
+          <br>
+          The PLC industry is slow to adopt new technologies and there is a high cost for many mediocre solutions. 
+          As a PLC programmer and a software engineer, I can pick the right tool that maximizes 
+          <span style="color: plum">functionality and reliability</span>. 
+        </p>
+      </div>
+    </Journey>
+    <Journey :picture="'bw.jpg'">
+      <div class="journey-text">
+        <p class="">
+          <span style="color: plum">Embedded systems</span> are what I am most interested in!
+          <br>
+          <br>
+          I have experience in programming <span style="color: plum">microcontrollers</span>, distributed <span style="color: plum">multicomputers</span> 
+          and embedded <span style="color: plum">linux</span> PCs.
+          I enjoy making drivers - whether it is a control panel for a label printer, a custom ModBus app or 
+          an API for a signal processing SBC, send it my way please!
+          <br>
+          <br>
+          As automation shifts towards the cloud, I can help you set up <span style="color: plum">IoT</span> messaging and remote device monitoring.
+          Tired of manually running tests or setting up environments? 
+          I can also help you create custom <span style="color: plum">pipelines</span> and <span style="color: plum">containerize</span> your environments.
+          <br>
+          <br>
+          Not sure how to tackle a task? <br>
+          I'm always down to do some research and learn about new technologies!
+        </p>
+      </div>
+    </Journey>
 </div>
 </template>
 
