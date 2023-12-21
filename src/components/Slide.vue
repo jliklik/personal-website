@@ -1,6 +1,6 @@
 <template>
-  <div class="flex items-stretch w-screen justify-center border-2 border-red-700">
-    <div class="flex w-1/2 items-stretch justify-center border-2 border-emerald-700">
+  <div class="flex items-stretch w-3/5 justify-center border-2 border-red-700">
+    <div class="flex w-3/4 items-stretch justify-center border-2 border-emerald-700">
       <div class="flex justify-center relative inset-0 border-2 border-blue-800" :style="{width: w + 'px', height: h + 'px'}">
         <div class="absolute z-0">
           <svg :height="h" :width="w">
