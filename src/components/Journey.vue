@@ -7,7 +7,7 @@
   >
     <span class="flex h-screen">
       <img :src="imgSrc" class="flex w-1/3 flex-grow object-cover">
-      <div class="flex w-2/3 bg-gradient-to-r from-slate-600 to-slate-800">
+      <div class="flex w-2/3 flex-grow bg-gradient-to-r from-slate-600 to-slate-800">
         <slot>Empty Content</slot>
       </div>
     </span>
