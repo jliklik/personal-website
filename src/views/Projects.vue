@@ -3,53 +3,83 @@
 </script>
 
 <template>
-  <div class="overflow-x-hidden w-screen flex flex-row">
-    <Slide class="shrink-0" ref="slide1"></Slide>
-    <Slide class="shrink-0" ref="slide2"></Slide>
-    <Slide class="shrink-0" ref="slide3"></Slide>
-    <Slide class="shrink-0" ref="slide4"></Slide>
+  <div class="flex-col h-screen border-2 border-green-700">
+    <div class="flex">
+      <button type="button" @click="slide_right" >Forward</button>
+      <button class="button" @click="slide_left">Back</button>
+    </div>
+    <div class="flex flex-grow overflow-x-hidden w-3/5 border-2 border-pink-400">
+      <Transition 
+        v-on:before-enter="beforeEnter"
+        v-on:enter="enter"
+        v-on:leave="leave">
+        <Slide class="" ref="slide1" v-if="slideIndex==1"></Slide>
+      </Transition>
+    </div>
   </div>
 </template>
 
 <script>
   import gsap from 'gsap';
-  import ScrollTrigger from "gsap/ScrollTrigger";
-  gsap.registerPlugin(ScrollTrigger);
 
   export default {
+    data() {
+      return {
+        slideIndex: 0
+      }
+    },
     mounted() {
-      this.startAnimation() 
+      this.slideIndex = 1;
     },
     methods: {
-      startAnimation() {
-        console.log(this.$refs)
-        ScrollTrigger.defaults({
-          toggleActions: "restart pause resume none",
-          markers: true
-        });
-        let sections = this.$refs;
-        gsap.to(sections, {
-          xPercent: -100*(sections.length - 1),
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".shrink-0",
-            pin: true,
-            scrub: 1,
-            snap: 1 / (sections.length - 1),
-            end: () => "+=" + document.querySelector(".shrink-0").offsetWidth
-          }
+      slide_right() {
+        this.slideIndex = this.slideIndex + 1;
+        console.log(this.slideIndex);
+      },
+      slide_left() {
+        this.slideIndex = this.slideIndex - 1;
+        console.log(this.slideIndex);
+      },
+      beforeEnter(el) {
+        console.log("before enter!")
+        gsap.set(el, {
+          scaleX: 0.8,
+          scaleY: 1.2
+        })
+        el.style.opacity = 0
+      },
+      enter(el, done) {
+        console.log("enter!")
+        gsap.to(el, {
+          duration: 1,
+          scaleX: 1.5,
+          scaleY: 0.7,
+          opacity: 1,
+          x: 150,
+          ease: 'elastic.inOut(2.5, 1)',
+          onComplete: done
+        })
+        el.style.opacity = 1
+      },
+      leave(el, done) {
+        gsap.to(el, {
+          duration: 0.7,
+          scaleX: 1,
+          scaleY: 1,
+          x: 300,
+          ease: 'elastic.inOut(2.5, 1)'
+        })
+        gsap.to(el, {
+          duration: 0.2,
+          delay: 0.5,
+          opacity: 0,
+          onComplete: done
         })
       }
     }
   }
 </script>
 
-<!-- gsap.fromTo('.block-circle', 3, {
-  borderRadius: '8px',
-  backgroundColor: 'purple',
-},
-{
-  borderRadius: '50%',
-  backgroundColor: 'orange',  
-}
-); -->
+
+<style scoped>
+</style>

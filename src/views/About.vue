@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="bg-black">
+  <div class="bg-black flex-col">
     <Journey :picture="'switch.jpg'" class="flex">
       <div class="journey-text">
         <div>

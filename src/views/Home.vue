@@ -1,5 +1,4 @@
 <script setup>
-  console.log('Home')
   import Infographic from '../components/Infographic.vue'
 </script>
 
@@ -9,7 +8,7 @@
       appear
       @before-enter="beforeEnter"
       @enter="enter">
-      <div class="grid grid-cols-3 divide-x-0 h-screen">
+      <div class="grid grid-cols-3 divide-x-0 flex-grow border-2 border-black">
         <infographic :label="'SYSTEMS'" :text_list="['Integration', 'Design', 'Analysis']" :picture="'dtb.jpg'"></infographic>
         <infographic :label="'SOFTWARE'" :text_list="['Embedded Systems', 'HMI', 'Devops', 'IoT']" :picture="'sib.jpg'"></infographic>
         <infographic :label="'ENGINEERING'" :text_list="['Prototyping', 'Modeling', 'Testing']" :picture="'cad.jpg'"></infographic>

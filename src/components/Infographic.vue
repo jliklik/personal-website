@@ -4,7 +4,7 @@
     @mouseover="toggleOnDetailed"
     @mouseleave="toggleOffDetailed"
   >
-    <div class="flex-col w-screen tint-background">
+    <span class="flex w-full flex-col tint-background border-none">
       <div class="flex h-1/2 items-center justify-center text-highlight-lg">
         {{ label }}
       </div>
@@ -20,7 +20,7 @@
           <br><br><br><br>
         </div>
       </Transition>
-    </div>
+    </span>
   </span>
 </template>
 
