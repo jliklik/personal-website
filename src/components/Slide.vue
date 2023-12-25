@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-shrink w-full border-2 border-red-700">
-    <div class="flex flex-shrink border-2 border-blue-800">
-      <img :src="`../../src/assets/verticross.jpg`" class="flex flex-shrink rounded-md flex-grow object-cover border-2">
+  <div class="flex flex-shrink w-full">
+    <div class="flex flex-shrink">
+      <img :src="`../../src/assets/verticross.jpg`" class="flex flex-shrink rounded-lg flex-grow object-cover">
     </div>
   </div>
 </template>

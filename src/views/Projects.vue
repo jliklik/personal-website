@@ -9,8 +9,9 @@
       <button class="button" @click="slide_left">Back</button>
     </div>
     <div class="overflow-auto flex flex-grow w-3/5 border-2 border-pink-400" ref="horizontal">
-      <Slide class="flex-shrink-0" ref="slide1"></Slide>
-      <Slide class="flex-shrink-0" ref="slide2"></Slide>
+      <Slide class="flex-shrink-0"></Slide>
+      <Slide class="flex-shrink-0"></Slide>
+      <Slide class="flex-shrink-0"></Slide>
     </div>
   </div>
 </template>
@@ -25,55 +26,52 @@
       return {
         slideIndex: 0,
         scrollPos: 0,
+        screenWidth: 0,
+        screenHeight: 0,
+        max_slides: 3,
         horizontalContainer: Object
       }
     },
     mounted() {
-      this.slideIndex = 1;
+      this.slideIndex = 0;
       this.horizontalContainer = this.$refs.horizontal;
+      this.updateScreenSize();
+      window.addEventListener('resize', this.updateScreenSize);
     },
     methods: {
+      updateScreenSize() {
+        // Update screen size data
+        this.screenWidth = window.innerWidth;
+        this.screenHeight = window.innerHeight;
+      },
       slide_right() {
-        // this.$nextTick(() => {
-        //   this.$refs.horizontal.animate({scrollLeft: this.scrollPos + 100});
-        //   this.scrollPos = this.scrollPos + 100;
-        // })
-        console.log(this.horizontalContainer);
-        gsap.to(this.horizontalContainer, { scrollTo: {x: 250}, duration: 2, ease: 'power2.inOut' });
-
-        this.slideIndex = this.slideIndex + 1;
-        console.log(this.slideIndex);
+        if (this.slideIndex < this.max_slides - 1) {
+          this.slideIndex = this.slideIndex + 1;
+          const container_width = this.screenWidth * 3/5 * this.slideIndex;
+          console.log(container_width);
+          gsap.to(this.horizontalContainer, { scrollTo: {x: container_width}, duration: 2, ease: 'power2.inOut' });
+          console.log(this.slideIndex);
+        } else {
+          this.slideIndex = this.max_slides - 1;
+          console.log(this.slideIndex);
+        }
       },
       slide_left() {
-        this.slideIndex = this.slideIndex - 1;
-        console.log(this.slideIndex);
+        if (this.slideIndex > 0) {
+          this.slideIndex = this.slideIndex - 1;
+          const container_width = this.screenWidth * 3/5 * this.slideIndex;
+          console.log(container_width);
+          gsap.to(this.horizontalContainer, { scrollTo: {x: container_width}, duration: 2, ease: 'power2.inOut' });
+          console.log(this.slideIndex);
+        } else {
+          this.slideIndex = 0;
+          console.log(this.slideIndex);
+        }
       },
-      beforeEnter(el) {
-        console.log("before enter!")
-        gsap.set(el, {
-          x:-700,
-          opacity: 0
-        })
-        el.style.opacity = 0
+      beforeDestroy() {
+        // Remove the event listener to prevent memory leaks
+        window.removeEventListener('resize', this.updateScreenSize);
       },
-      enter(el, done) {
-        console.log("enter!")
-        gsap.to(el, {
-          duration: 0.5,
-          x: 0,
-          opacity: 1,
-          onComplete: done
-        })
-        el.style.opacity = 1
-      },
-      leave(el, done) {
-        gsap.to(el, {
-          duration: 0.5,
-          x: 700,
-          opacity: 0,
-          onComplete: done
-        })
-      }
     }
   }
 </script>
