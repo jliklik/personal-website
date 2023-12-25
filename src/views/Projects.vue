@@ -9,9 +9,9 @@
       <button class="button" @click="slide_left">Back</button>
     </div>
     <div class="overflow-auto flex flex-grow w-3/5 border-2 border-pink-400" ref="horizontal">
-      <Slide class="flex-shrink-0"></Slide>
-      <Slide class="flex-shrink-0"></Slide>
-      <Slide class="flex-shrink-0"></Slide>
+      <Slide class="flex-shrink-0" :picture="'shamu.jpg'"></Slide>
+      <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
+      <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
     </div>
   </div>
 </template>
