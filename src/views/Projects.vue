@@ -61,8 +61,41 @@
           <div class="h-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full mx-1 my-1" ref="bounce_bar"></div>
         </div>
         <div class="flex grow">
-          <div class="flex grow text-white bg-slate-950">
-            Hello
+          <div class="flex-col w-1/3 h-full bg-slate-950">
+            <div class="flex mx-5 my-5 h-1/10 items-center justify-center">
+              <img :src="full_path(`corvus_energy.png`)" class="w-1/2 rounded-lg object-scale-down">
+            </div>
+            <div class="flex-col text-white mx-5 my-5 overflow-auto">
+              <div class="text-lg">The world's leading supplier of marine batteries.</div>
+              <br>
+              <div class="text-lg">Developed several new features in Elixir</div>
+              <ul class="ml-5 list-disc list-outside">
+                <li>Safety shutdown false positive detection</li>
+                <li>Serialization/deserialization logic between Elixir terms and C structs for nif calls</li>
+                <li>Modbus driver for new IO controller</li>
+                <li>Upgraded multicasting app to be more robust</li>
+              </ul>
+              <br>
+              <div class="text-lg">Worked with controls team to implement</div>
+              <ul class="ml-5 list-disc list-outside">
+                <li>Upgraded current limit, state of charge and state of health models</li>
+                <li>Implemented fan control algorithm</li>
+                <li>Azure DevOps pipeline to generate MATLAB embedded C code and Elixir nif interface</li>
+              </ul>
+              <br>
+              <div class="text-lg">Azure IoT integration</div>
+              <ul class="ml-5 list-disc list-outside">
+                <li>Experimented with methods to deliver OTA firmware updates using cloud storage/containers</li>
+                <li>Developed MQTT app in rust to receive device twin updates and send reported properties</li>
+              </ul>
+              <br>
+              <div class="text-lg">HIL/SIL testing</div>
+              <ul class="ml-5 list-disc list-outside">
+                <li>Wrote hardware in loop tests in Python, SIL tests in elixir</li>
+                <li>Added drivers to handle new power supplies and load banks (VISA, gRPC) </li>
+              </ul>
+
+            </div>
           </div>
           <div class="flex w-2/3">
             <div class="flex flex-row w-full overflow-x-hidden" ref="horizontal">
@@ -205,6 +238,9 @@
       full_path(picture) {
         return `../../src/assets/${picture}`
       },
+      full_url(picture) {
+        return `url('../../src/assets/${picture}')`
+      },
       slide_to_index(slide_index) {
         if ((slide_index < this.max_slides - 1) && (slide_index >= 0)) {
           this.slideIndex = slide_index;
@@ -258,6 +294,11 @@
       select_corvus() {
         this.state = "corvus_state";
         gsap.to(this.bounce_bar, { x: 0, width: this.corvus_width, duration: 1, ease: "poweri.out" });
+      },
+      corvus_bg() {
+        return {
+          backgroundImage: this.full_url('cp140.png')
+        }
       },
       select_mda_and_slide() {
         this.select_mda();
