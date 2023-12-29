@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-shrink w-full">
+  <div class="flex flex-shrink w-full items-stretch">
     <div class="flex flex-shrink">
-      <img :src="picture_path" class="flex flex-shrink rounded-lg flex-grow object-cover">
+      <img :src="picture_path" class="flex h-full flex-shrink rounded-lg flex-grow object-fill">
     </div>
   </div>
 </template>
