@@ -9,7 +9,10 @@
       <button class="button" @click="slide_left">Back</button>
     </div>
     <div class="overflow-auto flex flex-grow w-3/5 border-2 border-pink-400" ref="horizontal">
-      <Slide class="flex-shrink-0" :picture="'shamu.jpg'"></Slide>
+      <!-- <Slide class="flex-shrink-0" :picture="'shamu.jpg'"></Slide> -->
+      <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
+      <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
+      <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
       <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
       <Slide class="flex-shrink-0" :picture="'yvr.jpg'"></Slide>
     </div>
@@ -28,7 +31,7 @@
         scrollPos: 0,
         screenWidth: 0,
         screenHeight: 0,
-        max_slides: 3,
+        max_slides: 5,
         horizontalContainer: Object
       }
     },
@@ -47,7 +50,7 @@
       slide_right() {
         if (this.slideIndex < this.max_slides - 1) {
           this.slideIndex = this.slideIndex + 1;
-          const container_width = this.screenWidth * 3/5 * this.slideIndex;
+          const container_width = this.horizontalContainer.clientWidth * this.slideIndex;
           console.log(container_width);
           gsap.to(this.horizontalContainer, { scrollTo: {x: container_width}, duration: 2, ease: 'power2.inOut' });
           console.log(this.slideIndex);
