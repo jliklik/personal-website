@@ -11,7 +11,7 @@
       @after-enter="afterEnter"
     >
       <div class="flex flex-col h-screen">
-        <div class="flex h-[60px]">
+        <div class="flex h-[50px]">
           <ul class="flex w-full bg-slate-950" ref="logo_bar">
             <li :class="corvus_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus_and_slide">
               <img :src="full_path(`elixir.png`)" class="logo-default">
@@ -65,8 +65,8 @@
             <Transition mode="out-in">
               <div v-if=corvus_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
-                    <img :src="full_path(`corvus_energy.png`)" class="h-16 rounded-lg object-scale-down">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
+                    <img :src="full_path(`corvus_energy.png`)" class="h-16 rounded-lg object-cover">
                   </div>
                 </div>
                 <div class="flex-col text-white mx-5 my-2 overflow-auto">
@@ -77,25 +77,20 @@
                   <div class="text-lg">Distributed battery management system in Elixir</div>
                   <ul class="ml-5 list-disc list-outside">
                     <li>Developing features for next gen battery products</li>
-                    <li>Safety shutdown false positive detection</li>
                     <li>Serialization/deserialization logic between Elixir terms and C structs for nif calls</li>
-                    <li>Modbus driver for new IO controller</li>
-                    <li>Multicasting app upgrades</li>
-                    <li>Upgraded current limit, state of charge and state of health models</li>
-                    <li>Implemented fan control algorithm</li>
-                    <li>Azure DevOps pipeline to generate MATLAB embedded C code and Elixir nif interface</li>
+                    <li>Implemented current limit, state of charge, state of health and fan control algorithms</li>
+                    <li>Developed modbus driver for IO controller</li>
+                    <li>Created Azure DevOps pipeline to generate MATLAB embedded C code and Elixir nif interface</li>
                   </ul>
                   <br>
                   <div class="text-lg">Azure IoT integration</div>
                   <ul class="ml-5 list-disc list-outside">
-                    <li>Experimented with methods to deliver OTA firmware updates using cloud storage/containers</li>
                     <li>Developed MQTT app in rust to receive device twin updates and send reported properties</li>
                   </ul>
                   <br>
                   <div class="text-lg">HIL/SIL testing</div>
                   <ul class="ml-5 list-disc list-outside">
                     <li>Wrote hardware in loop tests in Python, SIL tests in elixir</li>
-                    <li>Added drivers to handle new power supplies and load banks (VISA, gRPC) </li>
                   </ul>
                   <ul class="ml-5 my-5">
                     <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Elixir</li>
@@ -107,13 +102,14 @@
                     <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">gRPC</li>
                     <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Modbus</li>
                     <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Docker</li>
                     <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Distributed systems</li>
                   </ul>
                 </div>
               </div>
               <div v-else-if=mda_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
                     <img :src="full_path(`mda.png`)" class="rounded-lg h-16 object-scale-down">
                   </div>
                 </div>
@@ -128,10 +124,10 @@
                     <li>Implementation of radar imaging algorithm onto embedded DSP multiprocessor</li>
                     <li>Bug fixes and improvements to MATLAB algorithm</li>
                     <li>Discovered FFT optimization that saved 10% memory per multiprocessor</li>
-                    <li>Refactored gradient descent algorithm, implemented dependency injection for experimentation with different cost functions</li>
-                    <li>Added features to signal processing library</li>
-                    <li>Refactored unit tests to reuse common code</li>
-                    <li>Benchmarking on optimization on Linux test server</li>
+                    <li>Refactored gradient descent algorithm</li>
+                    <li>Implemented dependency injection for experimentation with different cost functions</li>
+                    <li>Refactored unit tests to utilize common code</li>
+                    <li>Benchmarking and optimization on Linux test server</li>
                     <li>Debugging SBCs running VxWorks RTOS</li>
                   </ul>
                   <br>
@@ -147,7 +143,7 @@
               </div>
               <div v-else-if=fp_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
                     <img :src="full_path(`freshprep.png`)" class="rounded-lg h-16 object-scale-down">
                   </div>
                 </div>
@@ -180,7 +176,7 @@
               </div>
               <div v-else-if=brock_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
                     <img :src="full_path(`brock_solutions.png`)" class="rounded-lg h-16 object-scale-down">
                   </div>
                 </div>
@@ -191,19 +187,20 @@
                   <br>
                   <div class="text-lg">YVR DTB/ITB HBSR Upgrades</div>
                   <ul class="ml-5 list-disc list-outside">
-                    <li>Upgrading YVR's baggage screening system to industry standard 3-level system</li>
-                    <li>Produced electrical panel/network/e-stop layout drawings using AutoCAD</li>
-                    <li>Programmined new and existing PLCs, managed changes during phasing of brown field system</li>
+                    <li>Upgraded YVR's baggage screening system</li>
+                    <li>Produced electrical drawings using AutoCAD</li>
+                    <li>Programmined new and existing PLCs</li>
                     <li>Developed HMI screens</li>
-                    <li>Commissioned 480/600V panels, integrated PLCs with other x-ray/tag reader/software systems over Ethernet and ControlNet</li>
+                    <li>Commissioned 480/600V panels, integrated PLCs with other software systems over Ethernet and ControlNet</li>
                     <li>Custom scripts in Python to pull information from PLCs</li>
-                    <li>Factory acceptance testing and site witness testing</li>
+                    <li>Factory acceptance testing and site acceptance testing</li>
                   </ul>
                   <br>
                   <div class="text-lg">YVR Baggage Operations Strike Team</div>
                   <ul class="ml-5 list-disc list-outside">
-                    <li>Worked with YVR engineers to investigate root causes of bag tracking/loss incidents and analyze performance of baggage system</li>
-                    <li>Worked with electrician and maintenance crew to execute improvements/correct issues</li>
+                    <li>Worked with YVR engineers to investigate root causes of baggage incidents</li>
+                    <li>Analyzed performance of baggage system</li>
+                    <li>Worked with electricians and maintenance crew to execute improvements</li>
                     <li>Customer service and support</li>
                   </ul>
                   <ul class="ml-5 my-5">
@@ -216,7 +213,7 @@
               </div>
               <div v-else-if=psu_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
                     <img :src="full_path(`switch.jpg`)" class="rounded-lg h-16 object-scale-down">
                   </div>
                 </div>
@@ -246,7 +243,7 @@
               </div>
               <div v-else-if=pweb_state>
                 <div class="flex justify-center">
-                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                  <div class="flex mx-5 my-7 w-1/2 items-center justify-center">
                     <img :src="full_path(`switch.jpg`)" class="rounded-lg h-16 object-scale-down">
                   </div>
                 </div>

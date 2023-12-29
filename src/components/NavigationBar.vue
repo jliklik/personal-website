@@ -1,11 +1,8 @@
 <template>
   <div class="flex">
-    <ul class="flex flex-grow bg-gradient-to-r from-violet-800 to-indigo-300">
+    <ul class="flex flex-grow bg-slate-950">
       <li class="flex li-link">
         <router-link to="/" class="router-link flex flex-grow items-center justify-center">Home</router-link>
-      </li>
-      <li class="flex li-link">
-        <router-link to="/about" class="router-link flex flex-grow items-center justify-center">About</router-link>
       </li>
       <li class="flex li-link">
         <router-link to="/projects" class="router-link flex flex-grow items-center justify-center">Projects</router-link>
@@ -14,15 +11,6 @@
         <a href="#" class="router-link flex flex-grow items-center justify-center">GitHub</a>
       </li>
     </ul>
-    <div class="w-400px bg-gradient-to-r from-slate-800 to-slate-900">
-      <ul class="grid grid-cols-[75px_300px] font-bold text-white ml-3 mt-2">
-        <img src="../../src/assets/jl_logo.png" width="50" height="50" class="item1 col-span-1">
-        <div class="grid grid-rows-2 mr-3 mb-2 font-poppins">
-          <strong>Jian Lik Ng</strong>
-          <span>Systems Software Engineer</span>
-        </div>
-      </ul>
-    </div>
   </div>
 </template>
 
@@ -37,6 +25,6 @@
     @apply w-28;
   }
   .router-link{
-    @apply font-bold font-poppins text-white text-xl leading-10 hover:bg-violet-600 rounded-lg;
+    @apply font-bold font-poppins text-white text-xl leading-10 rounded-lg;
   }
 </style>
