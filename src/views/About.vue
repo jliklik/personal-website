@@ -3,10 +3,10 @@
 </script>
 
 <template>
-  <div class="bg-black">
-    <Journey :picture="'switch.jpg'">
+  <div class="bg-black flex-col">
+    <Journey :picture="'switch.jpg'" class="flex">
       <div class="journey-text">
-        <p class="">
+        <div>
           Hello! My name is Jian Lik. I am a <span style="color: plum">automation</span> and <span style="color: plum">software</span>
           engineer with <span style="color: plum">5+</span> years of experience. I have a strong background in control systems, 
           distributed processing and embedded software. 
@@ -20,7 +20,7 @@
           <br>
           <br>
           My broad experience allows me to develop solutions that create the most value for your company.
-        </p>
+        </div>
       </div>
     </Journey>
     <Journey :picture="'ada.jpg'">
@@ -52,7 +52,7 @@
           Sometimes principles used in traditional software engineering introduce greater risk to a system.
           <br>
           <br>
-          However, the PLC industry is often painstakingly slow to adopt new technologies and there is a high cost for many mediocre solutions. 
+          However, the PLC industry is often slow to adopt new technologies and there is a high cost for solutions that may not meet individual needs. 
           As a PLC programmer and a software engineer, I can pick the right tool that maximizes 
           <span style="color: plum">functionality and reliability</span>. 
         </p>
@@ -88,6 +88,6 @@
 
 <style scoped>
   .journey-text{
-    @apply flex items-center text-white font-poppins font-normal text-3xl leading-10 ml-5 mr-5 mt-5 mb-5
+    @apply flex flex-grow items-center overflow-auto text-white font-poppins font-normal text-3xl leading-10 ml-5 mr-5 mt-5 mb-5
   }
 </style>
