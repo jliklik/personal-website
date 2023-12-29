@@ -37,16 +37,22 @@
             <li :class="ignition ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
               <img :src="full_path(`ignition.png`)" class="logo-default">
             </li>
-            <li :class="rockwell ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
-              <img :src="full_path(`rockwell.png`)" class="logo-default">
-            </li>
             <li :class="beckhoff ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
               <img :src="full_path(`beckhoff.png`)" class="logo-default">
             </li>
-            <li class="li-logo-default">
+            <li :class="rockwell ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+              <img :src="full_path(`rockwell.png`)" class="logo-default">
+            </li>
+            <li :class="autocad ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+              <img :src="full_path(`autocad.png`)" class="logo-default">
+            </li>
+            <li :class="eagle ? 'li-logo-selected' : 'li-logo-default'" @click="select_psu">
+              <img :src="full_path(`eagle.png`)" class="logo-default">
+            </li>
+            <li :class="vue ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb">
               <img :src="full_path(`vue.png`)" class="logo-default">
             </li>
-            <li class="li-logo-default">
+            <li :class="js ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb">
               <img :src="full_path(`javascript.png`)" class="logo-default">
             </li>
           </ul>
@@ -92,10 +98,11 @@
         screenWidth: 0,
         screenHeight: 0,
         max_slides: 5,
-        num_icons: 12,
+        num_icons: 14,
         corvus_selected: true,
         mda_selected: false,
         fp_selected: false,
+        psu_selected: false,
         pweb_selected: false,
         bounce_bar_width: 0,
         horizontal_container: Object,
@@ -123,7 +130,13 @@
         return this.screenWidth / this.num_icons * 3;
       },
       fp_width() {
-        return this.screenWidth / this.num_icons * 4;
+        return this.screenWidth / this.num_icons * 5;
+      },
+      psu_width() {
+        return this.screenWidth / this.num_icons * 1;
+      },
+      pweb_width() {
+        return this.screenWidth / this.num_icons * 2;
       },
       elixir() {
         if (this.corvus_selected == true) {
@@ -195,7 +208,28 @@
           return false;
         }
       },
+      autocad() {
+        if (this.fp_selected == true) {
+          return true; 
+        } else {
+          return false;
+        }
+      },
+      eagle() {
+        if (this.psu_selected == true) {
+          return true; 
+        } else {
+          return false;
+        }
+      },
       vue() {
+        if (this.pweb_selected == true) {
+          return true; 
+        } else {
+          return false;
+        }
+      },
+      js() {
         if (this.pweb_selected == true) {
           return true; 
         } else {
@@ -209,13 +243,15 @@
       },
       updateScreenSize() {
         // Update screen size data
-        this.screenWidth = window.innerWidth;
+        this.screenWidth = this.horizontal_container.clientWidth;
+        console.log(this.screenWidth)
         this.screenHeight = window.innerHeight;
       },
       select_corvus() {
         this.corvus_selected = true;
         this.mda_selected = false;
         this.fp_selected = false;
+        this.psu_selected = false;
         this.pweb_selected = false;
         gsap.to(this.bounce_bar, { x: 0, width: this.corvus_width, duration: 1, ease: "poweri.out" });
       },
@@ -223,6 +259,7 @@
         this.corvus_selected = false;
         this.mda_selected = true;
         this.fp_selected = false;
+        this.psu_selected = false;
         this.pweb_selected = false;
         let mda_start = this.screenWidth/this.num_icons*3;
         gsap.to(this.bounce_bar, { x: mda_start, width: this.mda_width, duration: 1, ease: 'poweri.out' });
@@ -231,17 +268,28 @@
         this.corvus_selected = false;
         this.mda_selected = false;
         this.fp_selected = true;
+        this.psu_selected = false;
         this.pweb_selected = false;
         let fp_start = this.screenWidth/this.num_icons*6;
         gsap.to(this.bounce_bar, { x: fp_start, width: this.fp_width, duration: 1, ease: 'poweri.out' });
+      },
+      select_psu() {
+        this.corvus_selected = false;
+        this.mda_selected = false;
+        this.fp_selected = false;
+        this.psu_selected = true;
+        this.pweb_selected = false;
+        let start = this.screenWidth/this.num_icons*11;
+        gsap.to(this.bounce_bar, { x: start, width: this.psu_width, duration: 1, ease: 'poweri.out' });
       },
       select_pweb() {
         this.corvus_selected = false;
         this.mda_selected = false;
         this.fp_selected = false;
+        this.psu_selected = false;
         this.pweb_selected = true;
-        let fp_start = this.screenWidth/this.num_icons*6;
-        gsap.to(this.bounce_bar, { x: fp_start, width: this.fp_width, duration: 1, ease: 'poweri.out' });
+        let fp_start = this.screenWidth/this.num_icons*12;
+        gsap.to(this.bounce_bar, { x: fp_start, width: this.pweb_width, duration: 1, ease: 'poweri.out' });
       },
       slide_right() {
         if (this.slideIndex < this.max_slides - 1) {
