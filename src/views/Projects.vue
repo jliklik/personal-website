@@ -62,40 +62,216 @@
         </div>
         <div class="flex grow">
           <div class="flex-col w-1/3 h-full bg-slate-950">
-            <div class="flex mx-5 my-5 h-1/10 items-center justify-center">
-              <img :src="full_path(`corvus_energy.png`)" class="w-1/2 rounded-lg object-scale-down">
-            </div>
-            <div class="flex-col text-white mx-5 my-5 overflow-auto">
-              <div class="text-lg">The world's leading supplier of marine batteries.</div>
-              <br>
-              <div class="text-lg">Developed several new features in Elixir</div>
-              <ul class="ml-5 list-disc list-outside">
-                <li>Safety shutdown false positive detection</li>
-                <li>Serialization/deserialization logic between Elixir terms and C structs for nif calls</li>
-                <li>Modbus driver for new IO controller</li>
-                <li>Upgraded multicasting app to be more robust</li>
-              </ul>
-              <br>
-              <div class="text-lg">Worked with controls team to implement</div>
-              <ul class="ml-5 list-disc list-outside">
-                <li>Upgraded current limit, state of charge and state of health models</li>
-                <li>Implemented fan control algorithm</li>
-                <li>Azure DevOps pipeline to generate MATLAB embedded C code and Elixir nif interface</li>
-              </ul>
-              <br>
-              <div class="text-lg">Azure IoT integration</div>
-              <ul class="ml-5 list-disc list-outside">
-                <li>Experimented with methods to deliver OTA firmware updates using cloud storage/containers</li>
-                <li>Developed MQTT app in rust to receive device twin updates and send reported properties</li>
-              </ul>
-              <br>
-              <div class="text-lg">HIL/SIL testing</div>
-              <ul class="ml-5 list-disc list-outside">
-                <li>Wrote hardware in loop tests in Python, SIL tests in elixir</li>
-                <li>Added drivers to handle new power supplies and load banks (VISA, gRPC) </li>
-              </ul>
-
-            </div>
+            <Transition mode="out-in">
+              <div v-if=corvus_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`corvus_energy.png`)" class="h-16 rounded-lg object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">The world's leading supplier of marine batteries.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Battery management system software engineer</div>
+                  <br>
+                  <div class="text-lg">Distributed battery management system in Elixir</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Developing features for next gen battery products</li>
+                    <li>Safety shutdown false positive detection</li>
+                    <li>Serialization/deserialization logic between Elixir terms and C structs for nif calls</li>
+                    <li>Modbus driver for new IO controller</li>
+                    <li>Multicasting app upgrades</li>
+                    <li>Upgraded current limit, state of charge and state of health models</li>
+                    <li>Implemented fan control algorithm</li>
+                    <li>Azure DevOps pipeline to generate MATLAB embedded C code and Elixir nif interface</li>
+                  </ul>
+                  <br>
+                  <div class="text-lg">Azure IoT integration</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Experimented with methods to deliver OTA firmware updates using cloud storage/containers</li>
+                    <li>Developed MQTT app in rust to receive device twin updates and send reported properties</li>
+                  </ul>
+                  <br>
+                  <div class="text-lg">HIL/SIL testing</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Wrote hardware in loop tests in Python, SIL tests in elixir</li>
+                    <li>Added drivers to handle new power supplies and load banks (VISA, gRPC) </li>
+                  </ul>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Elixir</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Rust</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MATLAB</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Azure</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">gRPC</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Modbus</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Distributed systems</li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if=mda_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`mda.png`)" class="rounded-lg h-16 object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">Pioneering Canada's remote sensing industry.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Embedded software engineer</div>
+                  <br>
+                  <div class="text-lg">CP140 Radar Upgrade</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Upgrades to SAR software onboard Canada's surveillance aircraft</li>
+                    <li>Implementation of radar imaging algorithm onto embedded DSP multiprocessor</li>
+                    <li>Bug fixes and improvements to MATLAB algorithm</li>
+                    <li>Discovered FFT optimization that saved 10% memory per multiprocessor</li>
+                    <li>Refactored gradient descent algorithm, implemented dependency injection for experimentation with different cost functions</li>
+                    <li>Added features to signal processing library</li>
+                    <li>Refactored unit tests to reuse common code</li>
+                    <li>Benchmarking on optimization on Linux test server</li>
+                    <li>Debugging SBCs running VxWorks RTOS</li>
+                  </ul>
+                  <br>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C++</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MATLAB</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Signal processing</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Distributed systems</li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if=fp_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`freshprep.png`)" class="rounded-lg h-16 object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">Creating world-class dinners in minutes.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Automation engineer</div>
+                  <br>
+                  <div class="text-lg">Zero Waste Kit Automation Line</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Setting up automation lines for packaging reusable meal kit trays</li>
+                    <li>Lead HMI, database and SCADA network design and development</li>
+                    <li>Developed mySQL DB schema, tables, views and triggers</li>
+                    <li>PLC programming with Allen Bradley and Beckhoff controllers</li>
+                    <li>Created C# driver to control multiple print heads in tray barcode printing system</li>
+                    <li>Assembling and retrofitting conveyors/electrical equipment</li>
+                    <li>Part procurement</li>
+                  </ul>
+                  <br>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C#</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PLC</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Beckhoff PLC</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Ignition HMI</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MySQL</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if=brock_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`brock_solutions.png`)" class="rounded-lg h-16 object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">Real-time solutions for the transportation world.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Controls engineer</div>
+                  <br>
+                  <div class="text-lg">YVR DTB/ITB HBSR Upgrades</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Upgrading YVR's baggage screening system to industry standard 3-level system</li>
+                    <li>Produced electrical panel/network/e-stop layout drawings using AutoCAD</li>
+                    <li>Programmined new and existing PLCs, managed changes during phasing of brown field system</li>
+                    <li>Developed HMI screens</li>
+                    <li>Commissioned 480/600V panels, integrated PLCs with other x-ray/tag reader/software systems over Ethernet and ControlNet</li>
+                    <li>Custom scripts in Python to pull information from PLCs</li>
+                    <li>Factory acceptance testing and site witness testing</li>
+                  </ul>
+                  <br>
+                  <div class="text-lg">YVR Baggage Operations Strike Team</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Worked with YVR engineers to investigate root causes of bag tracking/loss incidents and analyze performance of baggage system</li>
+                    <li>Worked with electrician and maintenance crew to execute improvements/correct issues</li>
+                    <li>Customer service and support</li>
+                  </ul>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PLC</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PanelView</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">GE iFix HMI</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if=psu_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`switch.jpg`)" class="rounded-lg h-16 object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">Custom electronics and PCB design.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Personal project</div>
+                  <br>
+                  <div class="text-lg">Modified BCIT power supply</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Customized power supply to include additional 3.3V supply and voltage display</li>
+                    <li>Designed schematics and PCB layout on Eagle, had PCBs manufactured in China</li>
+                    <li>Voltage reading using voltage divider, op-amp and ADC</li>
+                    <li>Programmed driver for seven segment display in C</li>
+                    <li>Mechanical and electrical assembly</li>
+                    <li>Part procurement from Digikey</li>
+                  </ul>
+                  <br>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Eagle</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Electronics</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Arduino</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Soldering</li>
+                  </ul>
+                </div>
+              </div>
+              <div v-else-if=pweb_state>
+                <div class="flex justify-center">
+                  <div class="flex mx-5 my-3 w-1/2 items-center justify-center">
+                    <img :src="full_path(`switch.jpg`)" class="rounded-lg h-16 object-scale-down">
+                  </div>
+                </div>
+                <div class="flex-col text-white mx-5 my-2 overflow-auto">
+                  <div class="text-center text-lg">Flexible front-end design.</div>
+                  <br>
+                  <div class="text-center bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Personal project</div>
+                  <br>
+                  <div class="text-lg">Personal website</div>
+                  <ul class="ml-5 list-disc list-outside">
+                    <li>Front-end design using Vue and Javascript</li>
+                    <li>Styling with Tailwind CSS</li>
+                    <li>Animations with GSAP</li>
+                    <li>Professional UI without the limitations of traditional HMI applications</li>
+                  </ul>
+                  <br>
+                  <ul class="ml-5 my-5">
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Vue</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Javascript</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Tailwind</li>
+                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">GSAP</li>
+                  </ul>
+                </div>
+              </div>
+            </Transition>
           </div>
           <div class="flex w-2/3">
             <div class="flex flex-row w-full overflow-x-hidden" ref="horizontal">
