@@ -12,47 +12,47 @@
     >
       <div class="flex flex-col h-screen">
         <div class="flex h-[60px]">
-          <ul class="flex w-full bg-slate-950" id="logo-bar">
-            <li :class="elixir ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus">
+          <ul class="flex w-full bg-slate-950" ref="logo_bar">
+            <li :class="corvus_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus_and_slide">
               <img :src="full_path(`elixir.png`)" class="logo-default">
             </li>
-            <li :class="rust ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus">
+            <li :class="corvus_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus_and_slide">
               <img :src="full_path(`rust.png`)" class="logo-default">
             </li>
-            <li :class="python ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus">
+            <li :class="corvus_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_corvus_and_slide">
               <img :src="full_path(`python.png`)" class="logo-default">
             </li>
-            <li :class="matlab ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda">
+            <li :class="(corvus_state || mda_state) ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda_and_slide">
               <img :src="full_path(`matlab.png`)" class="logo-default">
             </li>
-            <li :class="c_lang ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda">
+            <li :class="(corvus_state || mda_state) ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda_and_slide">
               <img :src="full_path(`c_lang.png`)" class="logo-default">
             </li>
-            <li :class="cpp ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda">
+            <li :class="mda_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_mda_and_slide">
               <img :src="full_path(`cpp.png`)" class="logo-default">
             </li>
-            <li :class="c_sharp ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+            <li :class="fp_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp_and_slide">
               <img :src="full_path(`c_sharp.png`)" class="logo-default">
             </li>
-            <li :class="ignition ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+            <li :class="fp_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp_and_slide">
               <img :src="full_path(`ignition.png`)" class="logo-default">
             </li>
-            <li :class="beckhoff ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+            <li :class="fp_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp_and_slide">
               <img :src="full_path(`beckhoff.png`)" class="logo-default">
             </li>
-            <li :class="rockwell ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+            <li :class="(fp_state || brock_state) ? 'li-logo-selected' : 'li-logo-default'" @click="select_brock_and_slide">
               <img :src="full_path(`rockwell.png`)" class="logo-default">
             </li>
-            <li :class="autocad ? 'li-logo-selected' : 'li-logo-default'" @click="select_fp">
+            <li :class="brock_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_brock_and_slide">
               <img :src="full_path(`autocad.png`)" class="logo-default">
             </li>
-            <li :class="eagle ? 'li-logo-selected' : 'li-logo-default'" @click="select_psu">
+            <li :class="psu_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_psu_and_slide">
               <img :src="full_path(`eagle.png`)" class="logo-default">
             </li>
-            <li :class="vue ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb">
+            <li :class="pweb_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb_and_slide">
               <img :src="full_path(`vue.png`)" class="logo-default">
             </li>
-            <li :class="js ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb">
+            <li :class="pweb_state ? 'li-logo-selected' : 'li-logo-default'" @click="select_pweb_and_slide">
               <img :src="full_path(`javascript.png`)" class="logo-default">
             </li>
           </ul>
@@ -60,25 +60,25 @@
         <div class="flex w-full bg-slate-950">
           <div class="h-1 bg-gradient-to-r from-blue-200 to-blue-300 rounded-full mx-1 my-1" ref="bounce_bar"></div>
         </div>
-        <div class="flex">
-          <button type="button" class="text-white" @click="slide_right" >Forward</button>
-          <button class="button" @click="slide_left">Back</button>
-        </div>
-        <div class="flex grow flex-row w-full overflow-x-hidden border-2 border-pink-400" ref="horizontal">
-          <span
-            class="flex shrink-0 items-stretch text-white bg-center bg-cover bg-scale w-full" :style="bgStyle"
-          >
-          </span>
-          <span
-            class="flex shrink-0 items-stretch text-white bg-center bg-cover bg-scale w-full" :style="bgStyle"
-          >
-          </span>
-          <!-- <Slide class="flex" :picture="'seesaw2.jpg'"></Slide>
-          <Slide class="flex" :picture="'yvr.jpg'"></Slide>
-          <Slide class="flex" :picture="'yvr.jpg'"></Slide>
-          <Slide class="flex" :picture="'yvr.jpg'"></Slide>
-          <Slide class="flex" :picture="'yvr.jpg'"></Slide>
-          <Slide class="flex" :picture="'yvr.jpg'"></Slide> -->
+        <div class="flex grow">
+          <div class="flex grow text-white bg-slate-950">
+            Hello
+          </div>
+          <div class="flex w-2/3">
+            <div class="flex flex-row w-full overflow-x-hidden" ref="horizontal">
+              <Slide :picture="'dolphin.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'shamu.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'cp140.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'isar_2.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'fp_kit.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'fp_line.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'yvr.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'divert.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'psu.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'pcb.jpg'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+              <Slide :picture="'coding.png'" @slide_left="slide_left" @slide_right="slide_right"></Slide>
+            </div>
+          </div>
         </div>
       </div>
     </Transition>
@@ -97,199 +97,128 @@
         scrollPos: 0,
         screenWidth: 0,
         screenHeight: 0,
-        max_slides: 5,
+        max_slides: 12,
         num_icons: 14,
-        corvus_selected: true,
-        mda_selected: false,
-        fp_selected: false,
-        psu_selected: false,
-        pweb_selected: false,
-        bounce_bar_width: 0,
+        corvus_slide_index: 0,
+        mda_slide_index: 2,
+        fp_slide_index: 4,
+        brock_slide_index: 6,
+        psu_slide_index: 8,
+        pweb_slide_index: 10,
+        logo_bar_width: 0,
         horizontal_container: Object,
-        bounce_bar: Object
+        logo_bar: Object,
+        bounce_bar: Object,
+        state: "corvus_state"
       }
     },
     mounted() {
       this.slideIndex = 0;
       this.horizontal_container = this.$refs.horizontal;
+      this.logo_bar = this.$refs.logo_bar;
       this.bounce_bar = this.$refs.bounce_bar;
       this.updateScreenSize();
       window.addEventListener('resize', this.updateScreenSize);
       this.select_corvus();
     },
     computed: {
-      bgStyle() {
-        return {
-          backgroundImage: `url('../../src/assets/seesaw2.jpg')`
-        }
-      },
       corvus_width() {
-        return this.screenWidth / this.num_icons * 5;
+        return this.logo_bar_width / this.num_icons * 5;
       },
       mda_width() {
-        return this.screenWidth / this.num_icons * 3;
+        return this.logo_bar_width / this.num_icons * 3;
       },
       fp_width() {
-        return this.screenWidth / this.num_icons * 5;
+        return this.logo_bar_width / this.num_icons * 4;
+      },
+      brock_width() {
+        return this.logo_bar_width / this.num_icons * 2;
       },
       psu_width() {
-        return this.screenWidth / this.num_icons * 1;
+        return this.logo_bar_width / this.num_icons * 1;
       },
       pweb_width() {
-        return this.screenWidth / this.num_icons * 2;
+        return this.logo_bar_width / this.num_icons * 2;
       },
-      elixir() {
-        if (this.corvus_selected == true) {
-          return true; 
+      corvus_state() {
+        if (this.slideIndex >= this.corvus_slide_index && this.slideIndex <= this.corvus_slide_index + 1 ){
+          if (this.state != "corvus_state") {
+            this.select_corvus();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      rust() {
-        if (this.corvus_selected == true) {
-          return true; 
+      mda_state() {
+        if (this.slideIndex >= this.mda_slide_index && this.slideIndex <= this.mda_slide_index + 1 ){
+          if (this.state != "mda_state") {
+            this.select_mda();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      python() {
-        if (this.corvus_selected == true) {
-          return true; 
+      fp_state() {
+        if (this.slideIndex >= this.fp_slide_index && this.slideIndex <= this.fp_slide_index + 1 ){
+          if (this.state != "fp_state") {
+            this.select_fp();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      matlab() {
-        if (this.corvus_selected == true || this.mda_selected == true) {
-          return true; 
+      brock_state() {
+        if (this.slideIndex >= this.brock_slide_index && this.slideIndex <= this.brock_slide_index + 1 ){
+          if (this.state != "brock_state") {
+            this.select_brock();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      c_lang() {
-        if (this.corvus_selected == true || this.mda_selected == true) {
-          return true; 
+      psu_state() {
+        if (this.slideIndex >= this.psu_slide_index && this.slideIndex <= this.psu_slide_index + 1 ){
+          if (this.state != "psu_state") {
+            this.select_psu();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      cpp() {
-        if (this.mda_selected == true) {
-          return true; 
+      pweb_state() {
+        if (this.slideIndex >= this.pweb_slide_index && this.slideIndex <= this.pweb_slide_index + 1 ){
+          if (this.state != "pweb_state") {
+            this.select_fp();
+          }
+          return true;
         } else {
           return false;
         }
       },
-      c_sharp() {
-        if (this.fp_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      ignition() {
-        if (this.fp_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      rockwell() {
-        if (this.fp_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      beckhoff() {
-        if (this.fp_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      autocad() {
-        if (this.fp_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      eagle() {
-        if (this.psu_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      vue() {
-        if (this.pweb_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      },
-      js() {
-        if (this.pweb_selected == true) {
-          return true; 
-        } else {
-          return false;
-        }
-      }
     },
     methods: {
       full_path(picture) {
         return `../../src/assets/${picture}`
       },
-      updateScreenSize() {
-        // Update screen size data
-        this.screenWidth = this.horizontal_container.clientWidth;
-        console.log(this.screenWidth)
-        this.screenHeight = window.innerHeight;
-      },
-      select_corvus() {
-        this.corvus_selected = true;
-        this.mda_selected = false;
-        this.fp_selected = false;
-        this.psu_selected = false;
-        this.pweb_selected = false;
-        gsap.to(this.bounce_bar, { x: 0, width: this.corvus_width, duration: 1, ease: "poweri.out" });
-      },
-      select_mda() {
-        this.corvus_selected = false;
-        this.mda_selected = true;
-        this.fp_selected = false;
-        this.psu_selected = false;
-        this.pweb_selected = false;
-        let mda_start = this.screenWidth/this.num_icons*3;
-        gsap.to(this.bounce_bar, { x: mda_start, width: this.mda_width, duration: 1, ease: 'poweri.out' });
-      },
-      select_fp() {
-        this.corvus_selected = false;
-        this.mda_selected = false;
-        this.fp_selected = true;
-        this.psu_selected = false;
-        this.pweb_selected = false;
-        let fp_start = this.screenWidth/this.num_icons*6;
-        gsap.to(this.bounce_bar, { x: fp_start, width: this.fp_width, duration: 1, ease: 'poweri.out' });
-      },
-      select_psu() {
-        this.corvus_selected = false;
-        this.mda_selected = false;
-        this.fp_selected = false;
-        this.psu_selected = true;
-        this.pweb_selected = false;
-        let start = this.screenWidth/this.num_icons*11;
-        gsap.to(this.bounce_bar, { x: start, width: this.psu_width, duration: 1, ease: 'poweri.out' });
-      },
-      select_pweb() {
-        this.corvus_selected = false;
-        this.mda_selected = false;
-        this.fp_selected = false;
-        this.psu_selected = false;
-        this.pweb_selected = true;
-        let fp_start = this.screenWidth/this.num_icons*12;
-        gsap.to(this.bounce_bar, { x: fp_start, width: this.pweb_width, duration: 1, ease: 'poweri.out' });
+      slide_to_index(slide_index) {
+        if ((slide_index < this.max_slides - 1) && (slide_index >= 0)) {
+          this.slideIndex = slide_index;
+          const pos = this.horizontal_container.clientWidth * this.slideIndex;
+          console.log(pos);
+          gsap.to(this.horizontal_container, { scrollTo: {x: pos}, duration: 2, ease: 'power2.inOut' });
+          console.log(this.slideIndex);
+        } else if (slide_index >= this.max_slide) {
+          this.slideIndex = this.max_slides - 1;
+          console.log(this.slideIndex);
+        } else {
+          this.slideIndex = 0;
+          console.log(this.slideIndex);
+        }
       },
       slide_right() {
         if (this.slideIndex < this.max_slides - 1) {
@@ -306,7 +235,7 @@
       slide_left() {
         if (this.slideIndex > 0) {
           this.slideIndex = this.slideIndex - 1;
-          const container_width = this.screenWidth * 3/5 * this.slideIndex;
+          const container_width = this.horizontal_container.clientWidth * this.slideIndex;
           console.log(container_width);
           gsap.to(this.horizontal_container, { scrollTo: {x: container_width}, duration: 2, ease: 'power2.inOut' });
           console.log(this.slideIndex);
@@ -314,6 +243,66 @@
           this.slideIndex = 0;
           console.log(this.slideIndex);
         }
+      },
+      updateScreenSize() {
+        // Update screen size data
+        this.screenWidth = window.innerWidth;
+        console.log(this.screenWidth)
+        this.screenHeight = window.innerHeight;
+        this.logo_bar_width = this.logo_bar.offsetWidth;
+      },
+      select_corvus_and_slide() {
+        this.select_corvus();
+        this.slide_to_index(this.corvus_slide_index);
+      },
+      select_corvus() {
+        this.state = "corvus_state";
+        gsap.to(this.bounce_bar, { x: 0, width: this.corvus_width, duration: 1, ease: "poweri.out" });
+      },
+      select_mda_and_slide() {
+        this.select_mda();
+        this.slide_to_index(this.mda_slide_index);
+      },
+      select_mda() {
+        this.state = "mda_state";
+        let start = this.logo_bar_width/this.num_icons*3;
+        gsap.to(this.bounce_bar, { x: start, width: this.mda_width, duration: 1, ease: 'poweri.out' });
+      },
+      select_fp_and_slide() {
+        this.select_fp();
+        this.slide_to_index(this.fp_slide_index);
+      },
+      select_fp() {
+        this.state = "fp_state";
+        let start = this.logo_bar_width/this.num_icons*6;
+        gsap.to(this.bounce_bar, { x: start, width: this.fp_width, duration: 1, ease: 'poweri.out' });
+      },
+      select_brock_and_slide() {
+        this.select_brock();
+        this.slide_to_index(this.brock_slide_index);
+      },
+      select_brock() {
+        this.state = "brock_state";
+        let start = this.logo_bar_width/this.num_icons*9;
+        gsap.to(this.bounce_bar, { x: start, width: this.brock_width, duration: 1, ease: 'poweri.out' });
+      },
+      select_psu_and_slide() {
+        this.select_psu();
+        this.slide_to_index(this.psu_slide_index);
+      },
+      select_psu() {
+        this.state = "psu_state";
+        let start = this.logo_bar_width/this.num_icons*11;
+        gsap.to(this.bounce_bar, { x: start, width: this.psu_width, duration: 1, ease: 'poweri.out' });
+      },
+      select_pweb_and_slide() {
+        this.select_pweb();
+        this.slide_to_index(this.pweb_slide_index);
+      },
+      select_pweb() {
+        this.state = "pweb_state";
+        let start = this.logo_bar_width/this.num_icons*12;
+        gsap.to(this.bounce_bar, { x: start, width: this.pweb_width, duration: 1, ease: 'poweri.out' });
       },
       beforeDestroy() {
         // Remove the event listener to prevent memory leaks
@@ -346,10 +335,10 @@
 
 <style scoped>
   .li-logo-selected{
-    @apply flex w-screen justify-center transition ease-in-out duration-700
+    @apply flex w-screen justify-center transition ease-in-out duration-700 cursor-pointer
   }
   .li-logo-default{
-    @apply flex w-screen justify-center grayscale hover:grayscale-0 transition ease-in-out duration-700
+    @apply flex w-screen justify-center grayscale hover:grayscale-0 transition ease-in-out duration-700 cursor-pointer
   }
   .logo-default{
     @apply flex w-1/2 rounded-lg object-scale-down mx-2 my-2;
