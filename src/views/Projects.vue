@@ -93,17 +93,17 @@
                     <li>Wrote hardware in loop tests in Python, SIL tests in elixir</li>
                   </ul>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Elixir</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Rust</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MATLAB</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Azure</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">gRPC</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Modbus</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Docker</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Distributed systems</li>
+                    <li class="bubble">Elixir</li>
+                    <li class="bubble">Rust</li>
+                    <li class="bubble">Python</li>
+                    <li class="bubble">MATLAB</li>
+                    <li class="bubble">C</li>
+                    <li class="bubble">Azure</li>
+                    <li class="bubble">gRPC</li>
+                    <li class="bubble">Modbus</li>
+                    <li class="bubble">Linux</li>
+                    <li class="bubble">Docker</li>
+                    <li class="bubble">Distributed systems</li>
                   </ul>
                 </div>
               </div>
@@ -132,12 +132,12 @@
                   </ul>
                   <br>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C++</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MATLAB</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Signal processing</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Distributed systems</li>
+                    <li class="bubble">C</li>
+                    <li class="bubble">C++</li>
+                    <li class="bubble">MATLAB</li>
+                    <li class="bubble">Signal processing</li>
+                    <li class="bubble">Linux</li>
+                    <li class="bubble">Distributed systems</li>
                   </ul>
                 </div>
               </div>
@@ -164,13 +164,13 @@
                   </ul>
                   <br>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C#</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PLC</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Beckhoff PLC</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Ignition HMI</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">MySQL</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Linux</li>
+                    <li class="bubble">C#</li>
+                    <li class="bubble">Allen Bradley PLC</li>
+                    <li class="bubble">Beckhoff PLC</li>
+                    <li class="bubble">Ignition HMI</li>
+                    <li class="bubble">Python</li>
+                    <li class="bubble">MySQL</li>
+                    <li class="bubble">Linux</li>
                   </ul>
                 </div>
               </div>
@@ -204,10 +204,10 @@
                     <li>Customer service and support</li>
                   </ul>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PLC</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Allen Bradley PanelView</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">GE iFix HMI</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Python</li>
+                    <li class="bubble">Allen Bradley PLC</li>
+                    <li class="bubble">Allen Bradley PanelView</li>
+                    <li class="bubble">GE iFix HMI</li>
+                    <li class="bubble">Python</li>
                   </ul>
                 </div>
               </div>
@@ -233,11 +233,11 @@
                   </ul>
                   <br>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Eagle</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Electronics</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">C</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Arduino</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Soldering</li>
+                    <li class="bubble">Eagle</li>
+                    <li class="bubble">Electronics</li>
+                    <li class="bubble">C</li>
+                    <li class="bubble">Arduino</li>
+                    <li class="bubble">Soldering</li>
                   </ul>
                 </div>
               </div>
@@ -261,10 +261,10 @@
                   </ul>
                   <br>
                   <ul class="ml-5 my-5">
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Vue</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Javascript</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">Tailwind</li>
-                    <li class="inline-block mx-3 my-2 px-3 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">GSAP</li>
+                    <li class="bubble">Vue</li>
+                    <li class="bubble">Javascript</li>
+                    <li class="bubble">Tailwind</li>
+                    <li class="bubble">GSAP</li>
                   </ul>
                 </div>
               </div>
@@ -556,6 +556,9 @@
   }
   .logo-default{
     @apply flex w-1/2 rounded-lg object-scale-down mx-2 my-2;
+  }
+  .bubble{
+    @apply inline-block mx-3 my-2 px-2 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full
   }
   .v-enter-active,
   .v-leave-active {
