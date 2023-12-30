@@ -8,7 +8,7 @@
         <router-link to="/projects" class="router-link flex flex-grow items-center justify-center">Projects</router-link>
       </li>
       <li class="flex li-link">
-        <a href="#" class="router-link flex flex-grow items-center justify-center">GitHub</a>
+        <a href="https://github.com/jliklik" class="router-link flex flex-grow items-center justify-center">GitHub</a>
       </li>
     </ul>
   </div>
